@@ -6,24 +6,23 @@ import GlobalInputStateContext from "./context/InputDataContext";
 
 export default function App() {
   const [openAddModal, setOpenAddModal] = useState(false);
-  const [currentEditId, setCurrentEditId] = useState("");
+  const [currentEditId, setCurrentEditId] = useState(null);
   return (
-    <main className="flex flex-col gap-2 h-110 w-200 shadow-xl shadow-gray-800 rounded overflow-hidden ">
+    <main className="flex flex-col gap-2 h-130 w-250 rounded overflow-hidden ">
       <Header setOpenAddModal={setOpenAddModal} />
 
-      <GlobalInputStateContext>
-        <KanBan
-          setCurrentEditId={setCurrentEditId}
-          setOpenAddModal={setOpenAddModal}
-        />
+      <KanBan
+        setCurrentEditId={setCurrentEditId}
+        setOpenAddModal={setOpenAddModal}
+      />
 
-        {openAddModal && (
-          <AddModal
-            setOpenAddModal={setOpenAddModal}
-            currentEditId={currentEditId}
-          />
-        )}
-      </GlobalInputStateContext>
+      {openAddModal && (
+        <AddModal
+          setOpenAddModal={setOpenAddModal}
+          currentEditId={currentEditId}
+          setCurrentEditId={setCurrentEditId}
+        />
+      )}
     </main>
   );
 }

@@ -42,16 +42,16 @@ export default function TaskCard({
   }
 
   function updateTaskColor(title) {
-    if (title === "Active") return "#8aceff";
-    if (title === "InProgress") return "#fff27e";
-    if (title === "Completed") return "#5dff62";
+    if (title === "Active") return "#7ad8eb";
+    if (title === "InProgress") return "#ffdd00";
+    if (title === "Completed") return "#75eb00";
   }
 
   return (
     <div
       draggable
       onDragStart={() => handleDragStart(task.id, column.title)}
-      className={`flex flex-col shrink-0 bg-white h-20 p-2 rounded cursor-move shadow ${
+      className={`flex flex-col shrink-0 bg-white h-20 p-2 rounded cursor-move shadow select-none ${
         draggedTask?.taskId === task.id ? "opacity-50" : "opacity-100"
       }`}
       style={{ background: updateTaskColor(column.title) }}

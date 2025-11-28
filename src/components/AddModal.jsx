@@ -1,8 +1,12 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { GlobalDataContext } from "../context/DataContext";
 import { GlobalInputContext } from "../context/InputDataContext";
 
-export default function AddModal({ setOpenAddModal, currentEditId }) {
+export default function AddModal({
+  setOpenAddModal,
+  currentEditId,
+  setCurrentEditId,
+}) {
   const { setTaskData } = useContext(GlobalDataContext);
   const { inputData, setInputData } = useContext(GlobalInputContext);
 
@@ -48,6 +52,7 @@ export default function AddModal({ setOpenAddModal, currentEditId }) {
 
     setInputData("");
     setOpenAddModal(false);
+    setCurrentEditId(null);
   }
 
   return (
