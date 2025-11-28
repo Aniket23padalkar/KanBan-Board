@@ -18,12 +18,31 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    /* backdrop-filter: blur(1px); */
   }
 }
 
 @layer components {
   .article {
-    @apply bg-gray-200/60 p-2 rounded;
+    @apply bg-gray-100 p-2 rounded;
   }
+  .font-manrope {
+    font-family: "Manrope", sans-serif;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bebebe;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #acacac;
 }
